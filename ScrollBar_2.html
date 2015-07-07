@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        #scroll_con{
+            height: 180px;border-bottom: 1px solid #ff9485;width: 600px;position: relative;overflow: hidden;
+        }
+        #scroll_con .con{width: 2400px;height: 180px;position: absolute;top: 0;left: 0;background: url("100.png");}
+        .ScrollBar .bar{position: absolute;border-radius: 4px;background: #000000;opacity: 0.5;}
+        .ScrollBar .cross{bottom: 0;left: 0;height: 8px;}
+        .ScrollBar .vertical{top: 0;right: 0;width: 8px;}
+
+        #scroll_con_2{width: 200px;height: 400px;border: 1px solid #000000;margin: 0 auto;position: relative;overflow: hidden;}
+        #scroll_con_2 .con{width: 200px;height: 1600px;position: absolute;top: 0;left: 0;background: #ff9485;}
+    </style>
+    <script src="jquery-1.8.2.js"></script>
+    <script src="ScrollBar.js"></script>
+    <script>
+        $(function(){
+           $("#scroll_con").ScrollBar({
+               sleep:200,
+               content: "con",
+               Direction:"cross"
+           });
+        $("#scroll_con_2").ScrollBar({sleep:250,content: "con",Direction: "vertical"});
+        });
+
+
+    </script>
+</head>
+<body>
+<div id="scroll">
+    <div id="scroll_con" class="ScrollBar">
+        <div class="con"></div>
+    </div>
+</div>
+
+<div id="scroll_con_2" class="ScrollBar">
+    <div class="con"></div>
+</div>
+</body>
+</html>
